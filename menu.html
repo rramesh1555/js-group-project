@@ -1,0 +1,258 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Mealtime Cafe Menu</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+        <link href="http://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link type="text/css" href="css/styles.css" rel="stylesheet">
+        </head>
+        <style> 
+            .mt-mnu {
+                color: black;
+                background-color: white;
+            }
+
+            .mt-mnu table, th, td {
+                color: black;
+                background-color: white;
+            }
+
+            th {
+                background-color: #ffc600;
+                color: black;
+                font-weight: bold;
+                }
+
+            .dataTables_filter {
+                color: white;
+            }
+
+        </style>
+    <body class="menu">
+   
+        <header>
+            <a class="logo" href="index.html"><img src="images/logo.png" width="150" height="97" alt="Burger logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="menu.html">Menu</a></li>
+                    <li><a href="recipe.html">Recipe Corner</a></li>
+                    <li><a href="store-locator.html">Store Locator</a></li>
+                </ul>
+            </nav>
+        </header>       
+        
+        <main>
+            <div class="banner">
+                <h1>See What's new today</h1>
+                <p>We delivering the fastest way! It does not matter where you are. </p>
+            </div>
+            
+            <h2>Our Menus</h2>
+            <div class="mt-mnu">
+                <table id="menu-table" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Discount</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Starters</td>
+                            <td>Black Bean Dip</td>
+                            <td>150g</td>
+                            <td>5%</td>
+                            <td>$16</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bacon and Egg </td>
+                            <td>300g</td>
+                            <td>10%</td>
+                            <td>$29</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bagel and cream cheese </td>
+                            <td>500g</td>
+                            <td>12%</td>
+                            <td>$43</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Biscuits and gravy</td>
+                            <td>250g</td>
+                            <td>8%</td>
+                            <td>$13</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch</td>
+                            <td>Charleston red rice</td>
+                            <td>300g</td>
+                            <td>5%</td>
+                            <td>$20</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch</td>
+                            <td>Hawaiian haystack</td>
+                            <td>400g</td>
+                            <td>3%</td>
+                            <td>$22</td>
+                        </tr>
+                        <tr>
+                            <td>Dinner</td>
+                            <td>Delmonico's steak</td>
+                            <td>450g</td>
+                            <td>12%</td>
+                            <td>$26</td>
+                        </tr>
+                        <tr>
+                            <td>Dinner</td>
+                            <td>Reuben sandwich</td>
+                            <td>420g</td>
+                            <td>10%</td>
+                            <td>$12</td>
+                        </tr> 
+                        <tr>
+                            <td>Starters</td>
+                            <td>Black Bean Dip</td>
+                            <td>150g</td>
+                            <td>5%</td>
+                            <td>$16</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bacon and Egg </td>
+                            <td>300g</td>
+                            <td>10%</td>
+                            <td>$29</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bagel and cream cheese </td>
+                            <td>500g</td>
+                            <td>12%</td>
+                            <td>$43</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Biscuits and gravy</td>
+                            <td>250g</td>
+                            <td>8%</td>
+                            <td>$13</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch</td>
+                            <td>Charleston red rice</td>
+                            <td>300g</td>
+                            <td>5%</td>
+                            <td>$20</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch</td>
+                            <td>Hawaiian haystack</td>
+                            <td>400g</td>
+                            <td>3%</td>
+                            <td>$22</td>
+                        </tr>
+                        <tr>
+                            <td>Dinner</td>
+                            <td>Delmonico's steak</td>
+                            <td>450g</td>
+                            <td>12%</td>
+                            <td>$26</td>
+                        </tr>
+                        <tr>
+                            <td>Dinner</td>
+                            <td>Reuben sandwich</td>
+                            <td>420g</td>
+                            <td>10%</td>
+                            <td>$12</td>
+                        </tr>        
+                        <tr>
+                            <td>Starters</td>
+                            <td>Black Bean Dip</td>
+                            <td>150g</td>
+                            <td>5%</td>
+                            <td>$16</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bacon and Egg </td>
+                            <td>300g</td>
+                            <td>10%</td>
+                            <td>$29</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bagel and cream cheese </td>
+                            <td>500g</td>
+                            <td>12%</td>
+                            <td>$43</td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Biscuits and gravy</td>
+                            <td>250g</td>
+                            <td>8%</td>
+                            <td>$13</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch</td>
+                            <td>Charleston red rice</td>
+                            <td>300g</td>
+                            <td>5%</td>
+                            <td>$20</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch</td>
+                            <td>Hawaiian haystack</td>
+                            <td>400g</td>
+                            <td>3%</td>
+                            <td>$22</td>
+                        </tr>
+                        <tr>
+                            <td>Dinner</td>
+                            <td>Delmonico's steak</td>
+                            <td>450g</td>
+                            <td>12%</td>
+                            <td>$26</td>
+                        </tr>
+                        <tr>
+                            <td>Dinner</td>
+                            <td>Reuben sandwich</td>
+                            <td>420g</td>
+                            <td>10%</td>
+                            <td>$12</td>
+                        </tr>                              
+                       
+                    </tbody>
+                </table>
+            </div>
+          <h3>Order Now <a href="tel:+1 1234 56789" >+1 1234 56789</a></h3>
+            
+        </main>
+       
+        <footer>
+            <h5>Contact Us</h5> 
+            <p>53 E 116th St, <br>New York, NY 10029, <br>United States</p>
+            <a href="mailto:mealtime@mt.com">mealtime@mt.com</a><br>
+            <a href="tel:+1 1234 56789" >+1 1234 56789</a><br>
+            <small>Copyright © 2021 Mealtime Cafe </small>        
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
