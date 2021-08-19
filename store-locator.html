@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Mealtime Cafe Store Locator</title>
@@ -9,9 +9,18 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+           $( "#dialog" ).dialog();
+         } );
+        </script>
         </head>
     <body>
-   
+
         <header>
             <a class="logo" href="index.html"><img src="images/logo.png" width="150" height="97" alt="Burger logo"></a>
             <nav>
@@ -22,11 +31,14 @@
                     <li><a class="active" href="store-locator.html">Store Locator</a></li>
                 </ul>
             </nav>
-        </header>       
-        
+        </header>
+
         <main>
-            
+
             <h2>Get in touch with us</h2>
+            <div id="dialog" title="New Store Alert!">
+              <p>We are glad to inform that, Our new store is opening at Kitchener, near Fairview Mall and, Exciting offers are waiting for you.</p>
+            </div>
             <form action="" class="cont-form">
                 <ul>
                     <li>
@@ -44,7 +56,7 @@
                     <li class="message">
                         <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="form-control"></textarea>
                     </li>
-                    <li class="message">
+                    <li class="messqage">
                         <button type="submit" class="btn-submit">SEND</button>
                     </li>
                 </ul>
@@ -117,21 +129,21 @@
                             <td>Waterford </td>
                             <td>+353 2365 45698</td>
                             <td>mealtimeir@mt.com</td>
-                        </tr>           
-                       
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
           <h3>Order Now <a href="tel:+1 1234 56789" >+1 1234 56789</a></h3>
-            
+
         </main>
-       
+
         <footer>
-            <h5>Contact Us</h5> 
+            <h5>Contact Us</h5>
             <p>53 E 116th St, <br>New York, NY 10029, <br>United States</p>
             <a href="mailto:mealtime@mt.com">mealtime@mt.com</a><br>
             <a href="tel:+1 1234 56789" >+1 1234 56789</a><br>
-            <small>Copyright © 2021 Mealtime Cafe </small>        
+            <small>Copyright © 2021 Mealtime Cafe </small>
         </footer>
     </body>
 </html>
