@@ -268,7 +268,7 @@ $(document).ready(function(){
 
   if(!validate.test(lsubject) || (lsubject).length == 0) {
     $(lsubjectObj).addClass("error1");
-    $(lsubjectObj).val("Please enter a valid Subject")
+    $(lsubjectObj).val("Please enter a valid Subject");
     isValid = false;
   } else {
     csubjectValid = true
@@ -301,7 +301,7 @@ $(document).ready(function(){
   });
 
 
-  if(("$order-table").length) {
+  if($("#order-table").length) {
     sessionStorage.getItem('shoppingCart');
     var cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
     let total = 0;
