@@ -30,7 +30,7 @@
             <h2>Your order has been placed successfully</h2>
             <div class="menu-wrper">
             <div class="mt-mnu">
-                <table>
+                <table id="order-table">
                     <thead>
                         <tr>
                             <th>Type</th>
@@ -39,12 +39,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr hidden>
                             <td>Starters</td>
                             <td>Black Bean Dip</td>                            
                             <td>$16</td>                            
                         </tr>
-                        <tr>
+                        <!--<tr>
                             <td>Breakfast</td>
                             <td>Bacon and Egg </td>                          
                             <td>$29</td>                            
@@ -59,10 +59,10 @@
                             <td>Dinner</td>
                             <td>Delmonico's steak</td>                           
                             <td>$26</td>                            
-                        </tr>
+                        </tr> -->
                         <tr>                          
                             <td colspan="2"><strong>Total</strong></td>                          
-                            <td><strong>$150</strong></td>                            
+                            <td id="cart-amount"><strong>$0</strong></td>                            
                         </tr>                       
                        
                     </tbody>
@@ -82,5 +82,9 @@
             <a href="tel:+1 1234 56789" >+1 1234 56789</a><br>
             <small>Copyright © 2021 Mealtime Cafe </small>        
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+       <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+       <script src="js/scripts.js"></script>
     </body>
 </html>

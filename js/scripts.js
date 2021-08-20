@@ -98,11 +98,11 @@ $(document).ready(function(){
     saveCart()
   }
 
-  if($("#order-table").length) {
-    this._items.forEach(element => {
+  // if($("#order-table").length) {
+  //   this._items.forEach(element => {
 
-    });
-  }
+  //   });
+  // }
 
   function saveCart() {
     sessionStorage.setItem('shoppingCart', JSON.stringify(_items));
@@ -181,6 +181,7 @@ $(document).ready(function(){
 
   $('#login-button').on('click', function() {
 
+    let isvalid = true;
     var lUserNameEntry = $("#login-username").val();
     var lPasswordEntry = $("#login-password").val();
     var cUsernameObj1 = $("#login-username");
@@ -188,14 +189,22 @@ $(document).ready(function(){
     if(!validate.test(lUserNameEntry) || (lUserNameEntry).length == 0) {
       $(cUsernameObj1).addClass("error");
       $(cUsernameObj1).val("Please enter a valid username.");
+      let isvalid = false;
     }
     if(!validate.test(lPasswordEntry) || (lPasswordEntry).length == 0) {
       $(cUsernameObj1).addClass("error");
       $(cPasswordObj1).val("Please enter a valid password.");
+      let isvalid = false;
     }
     if (lUserNameEntry != acc[0] && lPasswordEntry != acc[1]) {
       console.log(acc[0]+ " Error in Logging");
+      let isvalid = false;
     }
+
+    if(isvalid) {
+      location.href = "order-success.html";
+    }
+
   });
 
   $('.message a').on('click', function() {
@@ -285,6 +294,18 @@ $(document).ready(function(){
 
 
   });
+
+
+  if(("$order-table").length) {
+    sessionStorage.getItem('shoppingCart');
+    var cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+    let total = 0;
+    for (var i = 0; i < cart.length; i++){ 
+      $("#order-table").find('tr:last').prev().after(" <tr class='cart-data'><td>"+cart[i].type+"</td> <td>"+cart[i].itemName+"</td><td>"+cart[i].price+"</td></tr>");
+      total = total + cart[i].price;
+    }
+    $("#cart-amount").html(total);
+  }
 
   });
 
