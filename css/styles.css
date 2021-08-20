@@ -380,6 +380,8 @@ button.Add_btn
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
+    float: left;
+    text-align: center;
 }
 .menu_cart td {   
     border: 1px solid #ffc600;
@@ -506,6 +508,95 @@ button.btn-submit {
 {
     width: 100% !important;
 }
+
+
+/**** login popup styles **********/
+.login-page {
+    width: 360px;
+    padding: 2% 0 0;
+    margin-left: 5%;
+  }
+  .form {
+    animation-name: launch;
+    animation-duration: 4s;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-bottom: 10px;
+  }
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #1d0c30;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .form button:hover,.form button:active,.form button:focus {
+    background: #ffc600;
+    color: #1d0c30;
+  }
+  .form .message {
+    margin: 15px 0 0;
+      color: #b3b3b3;
+    font-size: 16px;
+  }
+  .form .message a {
+    color: #1d0c30;
+    text-decoration: none;
+  }
+  .form .login-form {
+    display: none;
+  }
+
+
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(29, 12, 48, 0.84);
+    width: 100%;
+    backdrop-filter: blur(6px);
+    z-index: 999;
+    height: 100%;
+}
+  .modal-wraper {
+    width: 400px;
+    margin: 0 auto;
+}
+a.closebtn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 49px;
+    position: absolute;
+    right: 45px;
+    top: 20px;
+}
+/**** login popup styles *** end  ******/
+
 
 
 @media only screen and (max-width: 767px),

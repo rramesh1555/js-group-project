@@ -56,7 +56,7 @@
             <h2>Our Menus</h2>
             <div class="menu-wrper">
             <div class="mt-mnu">
-                <table  id="menu-table">
+                <table id="menu-table">
                     <thead>
                         <tr>
                             <th>Type</th>
@@ -67,6 +67,24 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td>Starters</td>
+                            <td>Black Bean Dip</td>                            
+                            <td>$16</td>
+                            <td><button class="Add_btn" id="menu-btn-1" value="one">Add Item</button></td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bacon and Egg </td>                          
+                            <td>$29</td>
+                            <td><button class="Add_btn" id="menu-btn-2" value="two">Add Item</button></td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast</td>
+                            <td>Bagel and cream cheese </td>                           
+                            <td>$43</td>
+                            <td><button class="Add_btn" id="menu-btn-3" value="three">Add Item</button></td>
+                        </tr>
+                        <!-- <tr>
                             <td>Starters</td>
                             <td>Black Bean Dip</td>                            
                             <td>$16</td>
@@ -113,13 +131,13 @@
                             <td>Reuben sandwich</td>                          
                             <td>$12</td>
                             <td><button class="Add_btn">Add Item</button></td>
-                        </tr>                       
+                        </tr>                        -->
                        
                     </tbody>
                 </table>
             </div>
             <div class="menu_cart">
-                <form action="order-success.html">
+                <form>
                 <table id="menu-cart">
                     <thead>
                         <tr>
@@ -130,7 +148,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr hidden> 
+                            <td>Starters</td>
+                            <td>Black Bean Dip</td>                            
+                            <td>$16</td>
+                             <td><button class="remove_btn"></button></td>
+                        </tr>
+                        <!-- <tr>
                             <td>Starters</td>
                             <td>Black Bean Dip</td>                            
                             <td>$16</td>
@@ -153,15 +177,15 @@
                             <td>Biscuits and gravy</td>                           
                             <td>$13</td>
                              <td><button class="remove_btn"></button></td>
-                        </tr>                      
+                        </tr>                       -->
                         <tr>
                             <td colspan="2"><strong>Total</strong></td>
-                            <td colspan="2">$150.00</td>                          
+                            <td colspan="2" id="total-amount">$0.00</td>                          
                             
                         </tr>                      
                     </tbody>
                 </table>
-                <button class="checkout" type="submit">Checkout</button>
+                <span class="checkout" onclick="openNav()">Checkout</span>
             </form>
             </div>
          
@@ -177,10 +201,31 @@
             <a href="tel:+1 1234 56789" >+1 1234 56789</a><br>
             <small>Copyright © 2021 Mealtime Cafe </small>        
         </footer>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-        <script src="js/scripts.js"></script>
+       
+        <!-- Login popup -->
+       <div id="login-modal" class="login-modal">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="modal-wraper">
+                <div class="direction">
+                    <h2>SIGN IN FOR MEALTIME</h2>
+                </div>
+                
+                <div class="login-page">
+                    <div class="form">
+                    <form class="register-form" action="order-success.html">
+                        <!-- <input id="create-username" type="text" placeholder="Username"/>                       -->
+                        <input id="create-email" type="text" placeholder="Email address"/>
+                        <input id="create-password" type="text" placeholder="Password"/>
+                        <button name="create-button" type="button" id="create-button">Sign In</button>
+                        <p class="message">Not registered? <a href="#">Create an account</a></p>
+                    </form>                    
+                    </div>
+                </div>
+            </div>
+       </div>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+       <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+       <script src="js/scripts.js"></script>
     </body>
 </html>
