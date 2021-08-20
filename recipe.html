@@ -16,6 +16,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function () {
+            $( "#dialog" ).dialog();
             $("#accordion").accordion();
         });
     </script>
@@ -40,7 +41,11 @@
             <h1>Discover recipes everyday</h1>
             <p>We delivering the fastest way! It does not matter where you are. </p>
         </div>
-
+        <div id="dialog" title="New Recipe Alert!">
+          <p>Our new Chicken Cuisines are available in our stores near you.
+Explore more and fill your tummy and share happiness! .
+The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+        </div>
         <h2>Our Recipes</h2>
         <div id="accordion">
             <h3>Biriyani</h3>
@@ -73,7 +78,7 @@
                 urna. Pellentesque risus ante, fermentum vel felis non, imperdiet vestibulum augue. Maecenas
                 consequat imperdiet fermentum. Maecenas lobortis mi sollicitudin pretium luctus. Phasellus
                 pharetra urna lacus, non venenatis mi sagittis at. </p>
-              
+
             </div>
             <h3>Lobster</h3>
             <div>

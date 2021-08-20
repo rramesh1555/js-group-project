@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
 }
-body 
+body
 {
     color: #000;
     font-size: 16px;
@@ -9,7 +9,7 @@ body
     margin: 0;
     padding: 0;
     background-image: url(../images/body-bg.png);
-    background-color: #1d0c30;  
+    background-color: #1d0c30;
     background-repeat: repeat;
 }
 header {
@@ -19,19 +19,19 @@ header {
     overflow: auto;
     display: flex;
     align-items: center;
-  
+
 }
-.logo 
+.logo
 {
     float: left;
     width: 20%;
 }
-nav 
+nav
 {
     float: left;
     width: 80%;
 }
-nav ul 
+nav ul
 {
    padding: 0;
    float: right;
@@ -50,9 +50,9 @@ nav ul li a
 }
 nav ul li a:hover, nav ul li a.active
 {
-    color: #ffc600; 
+    color: #ffc600;
 }
-h1 
+h1
 {
     font-size: 3.2em;
     color: #ffc600;
@@ -94,8 +94,8 @@ p {
     line-height: 26px;
 }
 
-main 
-{ 
+main
+{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0px 20px 20px;
@@ -146,7 +146,7 @@ main
     font-size: 20px;
     color: #fff;
     font-weight: 500;
-    z-index: 9;    
+    z-index: 9;
 }
 
 .mt-specials section {
@@ -173,7 +173,7 @@ main
     font-family: 'Merienda One', cursive;
     float: right;
 }
-.mt-chefs ul 
+.mt-chefs ul
 {
     padding: 0;
     display: flex;
@@ -203,14 +203,14 @@ main
 }
 .mt-chefs p {
     font-size: 14px;
-    color: #fff; 
-    text-align: center; 
+    color: #fff;
+    text-align: center;
     margin: 0;
 }
 .mt-abt p {
     font-size: 16px;
-    color: #000; 
-    text-align: center; 
+    color: #000;
+    text-align: center;
 }
 .mt-abt img {
    width: 100%;
@@ -256,12 +256,12 @@ main
     width: 100%;
     transform: rotate(180deg);
 }
-footer 
+footer
 {
     max-width: 1200px;
-    margin: 0 auto;    
+    margin: 0 auto;
     padding: 15px;
-    text-align: center;   
+    text-align: center;
     border-top: 1px dashed #fff;
 }
 footer h5
@@ -319,7 +319,7 @@ table {
     margin-bottom: 30px;
 
 }
-th 
+th
 {
     background: #ffc600;
     color: #1d0c30;
@@ -329,24 +329,24 @@ th
     padding: 18px 10px;
 
 }
-td 
+td
 {
     padding: 18px 10px;
     border: 1px dashed #ffc600;
     text-align: left;
     color: #fff;
 }
-h3 
+h3
 {
     font-size: 30px;
-    color: #ffc600; 
-    text-align: center; 
+    color: #ffc600;
+    text-align: center;
 }
 h3 a
 {
     font-size: 30px;
-    color: #fff; 
-    text-align: center; 
+    color: #fff;
+    text-align: center;
     text-decoration: none;
 }
 .menu-wrper {
@@ -370,7 +370,7 @@ button.Add_btn
     background: #ffc600;
     font-size: 16px;
     font-weight: 600;
-} 
+}
 .checkout {
     border: none;
     padding: 16px 15px;
@@ -383,7 +383,7 @@ button.Add_btn
     float: left;
     text-align: center;
 }
-.menu_cart td {   
+.menu_cart td {
     border: 1px solid #ffc600;
     background-color: #e7ecec;
     color: #1d0c30;
@@ -454,7 +454,7 @@ body.recipe .banner::before {
 .mt-recp ul li h4
 {
     font-size: 30px;
-    color: #ffc600; 
+    color: #ffc600;
     margin: 5px 0;
 }
 .mt-recp ul li img
@@ -602,6 +602,16 @@ a.closebtn {
     font-weight: 500;
 
 }
+
+/* .ui-dialog {
+  top: 4px;
+  left: 300px;
+} */
+#dialog p{
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+}
 /**** login popup styles *** end  ******/
 
 
@@ -618,18 +628,18 @@ a.closebtn {
     .mt-specials section {
         width: 50%;
     }
-   
+
     table, thead, tbody, th, td, tr {
         display: block;
         }
-        
+
         thead tr {
             position: absolute;
             top: -9999px;
             left: -9999px;
         }
         tr {     margin-bottom: 8px; }
-        td {        
+        td {
             border: none;
             border: 1px dashed #ffc600;
             position: relative;
@@ -645,19 +655,19 @@ a.closebtn {
             height: 100%;
             padding: 18px 10px;
             box-sizing: border-box;
-        }  
+        }
         .mt-mnu td:nth-of-type(1):before { content: "Type"; background-color: #ffc600;color: #1d0c30;font-weight: bold;}
         .mt-mnu td:nth-of-type(2):before { content: "Item Name"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }
-        .mt-mnu td:nth-of-type(5):before { content: "Price"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }      
-        
+        .mt-mnu td:nth-of-type(5):before { content: "Price"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }
+
         .mt-stores td:nth-of-type(1):before { content: "Branch"; background-color: #ffc600;color: #1d0c30;font-weight: bold;}
         .mt-stores td:nth-of-type(2):before { content: "Address"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }
         .mt-stores td:nth-of-type(3):before { content: "City"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }
         .mt-stores td:nth-of-type(4):before { content: "Phone"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }
         .mt-stores td:nth-of-type(5):before { content: "Email"; background-color: #ffc600;color: #1d0c30;font-weight: bold; }
 
-        .mt-stores td:before {            
-            width: 30%;           
+        .mt-stores td:before {
+            width: 30%;
         }
         .mt-stores td {
             padding-left: 35%;
@@ -665,7 +675,7 @@ a.closebtn {
         }
 }
 
-@media only screen and (max-width: 767px) 
+@media only screen and (max-width: 767px)
 {
     .banner {
         height: 400px;
