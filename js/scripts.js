@@ -45,10 +45,6 @@ $(document).ready(function(){
 
   $("#menu-table").DataTable();
 
-  // $("#menu-sel-btn").click(function(){
-  //   alert("helllooo");
-  // });
-
   $( "#menu-btn-1" ).on( "click", function( event ) {
     event.preventDefault();
     let a = $( "#menu-btn-1" ).val();
@@ -77,8 +73,6 @@ $(document).ready(function(){
   var item2 = new Item("Breakfast", "Bacon and Egg", 29);
   var item3 = new Item("Breakfast", "Bagel and cream cheese", 43);
 
-  // item1.type = "test10";
-
   var map = { one: item1, two: item2, three: item3 }
   function get(k){
     return map[k];
@@ -90,9 +84,10 @@ $(document).ready(function(){
     // $("#menu-cart").closest('table').find('tr:last').prev().after(" <tr> <td>"+t.type+"</td> <td>"+t.itemName+"</td><td>"+t.price+"</td> <td><button class='remove_btn'></button></td></tr>");
 
     // $("#menu-cart").find('tr:last').prev().after(" <tr><td>"+t.type+"</td> <td>"+t.itemName+"</td><td>"+t.price+"</td> <td><button class='remove_btn'></button></td></tr>");
-    $("#menu-cart").find('tr:last').prev().after(" <tr><td>"+t.type+"</td> <td>"+t.itemName+"</td><td>"+t.price+"</td> <td><button class='remove_btn'></button></td></tr>");
+    $("#menu-cart").find('tr:last').prev().after(" <tr class='cart-data'><td>"+t.type+"</td> <td>"+t.itemName+"</td><td>"+t.price+"</td></tr>");
     total = total + parseFloat(t.price);
     $("#total-amount").html(total);
+    saveCart()
   }
 
   if($("#order-table").length) {
@@ -100,10 +95,22 @@ $(document).ready(function(){
       
     });
   }
+
+  function saveCart() {
+    sessionStorage.setItem('shoppingCart', JSON.stringify(_items));
+  }
+
+  $( "#clearCart" ).on( "click", function( event ) {
+    event.preventDefault();
+    _items = [];
+    total = 0;
+    saveCart();
+    $('.cart-data').remove();
+    $("#total-amount").html(total);
+  });
+
 });
 
-
-//modal 
 function openNav() {
   document.getElementById("login-modal").style.display = "block";
 }
