@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   var _items = [];
   var lUserName="";
   var lPassword="";
@@ -202,7 +201,14 @@ $(document).ready(function(){
     }
 
     if(isvalid) {
-      location.href = "order-success.html";
+      if(lUserNameEntry == "rosh" && lPasswordEntry == "rosh") {
+        location.href = "order-success.html";
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: 'Username/Password is invalid'
+        });
+      }
     }
 
   });
@@ -290,9 +296,8 @@ $(document).ready(function(){
 
   if (isValid == false) {
       evt.preventDefault();
-          }
 
-
+    } 
   });
 
 
