@@ -76,11 +76,20 @@ $(document).ready(function(){
     updateCart(t);
   });
 
-  var item1 = new Item("Breakfast", "Black Bean Dip", 16);
+  $( "#menu-btn-4" ).on( "click", function( event ) {
+    event.preventDefault();
+    let a = $( "#menu-btn-4" ).val();
+    var t = get(a);
+    _items.push(get(a));
+    updateCart(t);
+  });
+
+  var item1 = new Item("Starters", "Black Bean Dip", 16);
   var item2 = new Item("Breakfast", "Bacon and Egg", 29);
   var item3 = new Item("Breakfast", "Bagel and cream cheese", 43);
+  var item4 = new Item("Breakfast", "Biscuits and gravy", 13);
 
-  var map = { one: item1, two: item2, three: item3 }
+  var map = { one: item1, two: item2, three: item3, four: item4 }
   function get(k){
     return map[k];
   }
@@ -120,62 +129,99 @@ $(document).ready(function(){
     var cUsername = $("#create-username").val();
     var cPassword = $("#create-password").val();
     var cEmail = $("#create-email").val();
-    var cUsernameValid = false;
-    var cPasswordValid = false;
-    var cEmailValid = false;
-    var cUsernameObj = $("#create-username");
-    var cPasswordObj = $("#create-password");
-    var cEmailObj = $("#create-email");
-
+    var cAddress = $("#create-address").val();
     var vEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+    var errorMsg = "";
+    var isValid = true;
+    if(cUsername == "") {
+      errorMsg = errorMsg + "Please enter a valid username.<br>";
+      isValid = false;
+    }
 
-    if(!validate.test(cUsername) || (cUsername).length == 0) {
-      $(cUsernameObj).addClass("error");
-      $(cUsernameObj).val("Please enter a valid username.");
+    if(cPassword == "") {
+      errorMsg = errorMsg + "Please enter a valid password.<br>";
+      isValid = false;
+    }
+
+    if(cEmail == "" || !vEmail.test(cEmail)) {
+      errorMsg = errorMsg + "Please enter a valid email.<br>";
+      isValid = false;
+    }
+
+    if(cAddress == "") {
+      errorMsg = errorMsg + "Please enter a valid address.<br>";
+      isValid = false;
+    }
+
+    if(!isValid) {
+      Swal.fire({
+        icon: 'error',
+        html: errorMsg
+      });
+
     } else {
-      cUsernameValid = true;
-      var createUsername = $(cUsernameObj).val();
+      sessionStorage.setItem(cUsername, cPassword);
+      window.location.reload(false); 
     }
+    
+    
+    // var cUsernameValid = false;
+    // var cPasswordValid = false;
+    // var cEmailValid = false;
+    // var cUsernameObj = $("#create-username");
+    // var cPasswordObj = $("#create-password");
+    // var cEmailObj = $("#create-email");
 
-    if(!validate.test(cPassword) || (cPassword).length == 0) {
-      $(cPasswordObj).addClass("error");
-      $(cPasswordObj).val("Password format is wrong.");
-    } else {
-      cPasswordValid = true;
-      var createPassword = $(cPasswordObj).val();
-    }
+    // var vEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if(!vEmail.test(cEmail)) {
-      $(cEmailObj).addClass("error");
-      $(cEmailObj).val("Please enter a valid email");
-    } else {
-      cEmailValid = true;
-      console.log("Account Email " + cEmailObj.val());
-    }
+    // if(!validate.test(cUsername) || (cUsername).length == 0) {
+    //   $(cUsernameObj).addClass("error");
+    //   $(cUsernameObj).val("Please enter a valid username.");
+    // } else {
+    //   cUsernameValid = true;
+    //   var createUsername = $(cUsernameObj).val();
+    // }
 
-    $(cUsernameObj).on('click', function () {
-      $(this).val("");
-      $(this).removeClass("error");
-    });
+    // if(!validate.test(cPassword) || (cPassword).length == 0) {
+    //   $(cPasswordObj).addClass("error");
+    //   $(cPasswordObj).val("Password format is wrong.");
+    // } else {
+    //   cPasswordValid = true;
+    //   var createPassword = $(cPasswordObj).val();
+    // }
 
-    $(cPasswordObj).on('click', function () {
-      $(this).val("");
-      $(this).removeClass("error");
-    });
+    // if(!vEmail.test(cEmail)) {
+    //   $(cEmailObj).addClass("error");
+    //   $(cEmailObj).val("Please enter a valid email");
+    // } else {
+    //   cEmailValid = true;
+    //   console.log("Account Email " + cEmailObj.val());
+    // }
 
-    $(cEmailObj).on('click', function () {
-      $(this).val("");
-      $(this).removeClass("error");
-    });
+    // $(cUsernameObj).on('click', function () {
+    //   $(this).val("");
+    //   $(this).removeClass("error");
+    // });
 
-    acc = [createUsername, createPassword];
+    // $(cPasswordObj).on('click', function () {
+    //   $(this).val("");
+    //   $(this).removeClass("error");
+    // });
 
-    if(cUsernameValid == true && cPasswordValid == true && cEmailValid == true) {
-      $('form').animate({
-      height: "toggle",
-      opacity: "toggle"
-    }, "fast");
-    }
+    // $(cEmailObj).on('click', function () {
+    //   $(this).val("");
+    //   $(this).removeClass("error");
+    // });
+
+    // acc = [createUsername, createPassword];
+
+    // if(cUsernameValid == true && cPasswordValid == true && cEmailValid == true) {
+    //   $('form').animate({
+    //   height: "toggle",
+    //   opacity: "toggle"
+    // }, "fast");
+    // }
   });
 
   $('#login-button').on('click', function() {
@@ -201,6 +247,10 @@ $(document).ready(function(){
     }
 
     if(isvalid) {
+      let pswd = sessionStorage.getItem(lUserNameEntry);
+      if(pswd == lPasswordEntry) {
+        location.href = "order-success.html";
+      } else
       if(lUserNameEntry == "rosh" && lPasswordEntry == "rosh") {
         location.href = "order-success.html";
       } else {
@@ -312,7 +362,21 @@ $(document).ready(function(){
     $("#cart-amount").html(total);
   }
 
+  if(("$menu-cart").length) {
+    sessionStorage.getItem('shoppingCart');
+    var cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+    let total = 0;
+    for (var i = 0; i < cart.length; i++){ 
+      $("#menu-cart").find('tr:last').prev().after(" <tr class='cart-data'><td>"+cart[i].type+"</td> <td>"+cart[i].itemName+"</td><td>"+cart[i].price+"</td></tr>");
+      total = total + cart[i].price;
+    }
+    $("#total-amount").html(total);
+  }
+
+
   });
+
+  
 
 function openNav() {
   document.getElementById("login-modal").style.display = "block";
