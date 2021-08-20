@@ -219,7 +219,7 @@ $(document).ready(function(){
     }, "fast");
   });
 
-  $('.btn-submit').on('click', function() {
+  $('.btn-submit').on('click', evt => {
 
   var lname = $("#lname").val();
   var lemail = $("#lemail").val();
