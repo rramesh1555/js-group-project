@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Mealtime Cafe Store Locator</title>
@@ -9,9 +9,22 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-        </head>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script>
+          $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+              var value = $(this).val().toLowerCase();
+              $(".mt-stores tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+            });
+          });
+          </script>
+
+      </head>
     <body>
-   
+
         <header>
             <a class="logo" href="index.html"><img src="images/logo.png" width="150" height="97" alt="Burger logo"></a>
             <nav>
@@ -22,24 +35,24 @@
                     <li><a class="active" href="store-locator.html">Store Locator</a></li>
                 </ul>
             </nav>
-        </header>       
-        
+        </header>
+
         <main>
-            
+
             <h2>Get in touch with us</h2>
             <form action="" class="cont-form">
                 <ul>
                     <li>
-                        <input type="text" placeholder="Name" class="form-control">
+                        <input type="text" placeholder="Name" class="form-control" id='lname'>
                     </li>
                     <li>
-                        <input type="email" placeholder="Email" class="form-control">
+                        <input type="email" placeholder="Email" class="form-control" id='lemail'>
                     </li>
                     <li>
-                        <input type="tel" placeholder="Phone" class="form-control">
+                        <input type="tel" placeholder="Phone" class="form-control" id='ltel'>
                     </li>
                     <li>
-                        <input type="text" placeholder="Subject" class="form-control">
+                        <input type="text" placeholder="Subject" class="form-control" id='lsubject'>
                     </li>
                     <li class="message">
                         <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="form-control"></textarea>
@@ -49,7 +62,15 @@
                     </li>
                 </ul>
             </form>
+
+            <!-- <h2>Filterable Table</h2>
+            <p>Type something in the input field to search the table for first names, last names or emails:</p>
+            <input id="myInput" type="text" placeholder="Search..">
+            <br><br> -->
             <h2>Locate Our Stores</h2>
+            <p>Quick search here and find a store near to your location:</p>
+            <input id="myInput" type="text" placeholder="Search here..">
+
             <div class="mt-stores">
                 <table>
                     <thead>
@@ -117,21 +138,24 @@
                             <td>Waterford </td>
                             <td>+353 2365 45698</td>
                             <td>mealtimeir@mt.com</td>
-                        </tr>           
-                       
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
           <h3>Order Now <a href="tel:+1 1234 56789" >+1 1234 56789</a></h3>
-            
+
         </main>
-       
+
         <footer>
-            <h5>Contact Us</h5> 
+            <h5>Contact Us</h5>
             <p>53 E 116th St, <br>New York, NY 10029, <br>United States</p>
             <a href="mailto:mealtime@mt.com">mealtime@mt.com</a><br>
             <a href="tel:+1 1234 56789" >+1 1234 56789</a><br>
-            <small>Copyright © 2021 Mealtime Cafe </small>        
+            <small>Copyright © 2021 Mealtime Cafe </small>
         </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
